@@ -45,7 +45,7 @@ class Query(object):
         elif path[0] in entry:
             return self._extract(entry[path[0]], path[1:])
         else:
-            return entry
+            return None
 
     def _process_condition(self, operator, condition, entry):
         if isinstance(condition, Mapping) and "$exists" in condition:
